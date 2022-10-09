@@ -66,22 +66,22 @@ public class Main {
         return targetEmployee;
     }
 
-    public static void printFullNameAllEmployees() {
-        for (Employee employee : emp) {
-            if (employee != null) {
-                System.out.println(employee.getFullName());
-            }
-        }
-    }
-
     public static int calculateAverageSalary(){
         int averageSalary = 0;
         int counter = 0;
         for (int i = 0;i< emp.length;i++) {
             counter++;
             averageSalary = calculateSumAllSalary()/counter;
-            }
+        }
         return averageSalary;
+    }
+
+    public static void printFullNameAllEmployees() {
+        for (Employee employee : emp) {
+            if (employee != null) {
+                System.out.println(employee.getFullName());
+            }
+        }
     }
 }
 
