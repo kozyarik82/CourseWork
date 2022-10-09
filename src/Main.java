@@ -16,18 +16,13 @@ public class Main {
         emp[8] = new Employee(" Подгурская Валентина Владимировна ", 5, 35000);
         emp[9] = new Employee(" Казаков Кирилл Сергеевич ", 1, 23000);
 
-
         printAllEmployees();
         System.out.println(" Сумма затрат на зарплаты всех сотрудников в месяц составляет: " + calculateSumAllSalary());
         System.out.println(" Сотрудник с минимальной заработной платой: " + getEmployeeWithMinSalary());
         System.out.println(" Сотрудник с максимальной заработной платой: " + getEmployeeWithMaxSalary());
-        System.out.println(" Средняя заработная плата одного сотрудник в месяц составляет: " + calculateAverageSalary());
+        System.out.println(" Средняя заработная плата одного сотрудника в месяц составляет: " + calculateAverageSalary());
         printFullNameAllEmployees();
-
-
-
     }
-
 
     public static void printAllEmployees() {
         for (Employee employee : emp) {
@@ -71,29 +66,23 @@ public class Main {
         return targetEmployee;
     }
 
-    public static int calculateAverageSalary() {
-        int averageSalary = calculateSumAllSalary() / emp.length;
-        return averageSalary;
-    }
-
     public static void printFullNameAllEmployees() {
         for (Employee employee : emp) {
             if (employee != null) {
                 System.out.println(employee.getFullName());
             }
         }
-
     }
 
-
-
-
-
-
-
-
-
-
+    public static int calculateAverageSalary(){
+        int averageSalary = 0;
+        int counter = 0;
+        for (int i = 0;i< emp.length;i++) {
+            counter++;
+            averageSalary = calculateSumAllSalary()/counter;
+            }
+        return averageSalary;
+    }
 }
 
 
