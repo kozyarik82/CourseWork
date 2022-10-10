@@ -70,10 +70,12 @@ public class Main {
         int averageSalary = 0;
         int counter = 0;
         for (int i = 0;i< emp.length;i++) {
-            counter++;
-            averageSalary = calculateSumAllSalary()/counter;
+            if (emp[i] != null) {
+                averageSalary += emp[i].getSalary();
+                counter++;
+            }
         }
-        return averageSalary;
+        return averageSalary/counter;
     }
 
     public static void printFullNameAllEmployees() {
